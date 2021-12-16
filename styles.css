@@ -1,3 +1,4 @@
+/*
 font-family: 'Quicksand', sans-serif;
 COLORS
 light-yellow - #f7e4bf;
@@ -5,3 +6,57 @@ light-blue - #78a7c6;
 dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
+*/
+html {
+  height: 100%;
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+}
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  left: 50%;
+  text-align: center;
+}
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  left: 50%;
+  text-align: center;
+  top: 400px;
+  margin-top: 10%;
+}
+.container {
+background: #ffffff;
+width: 450px;
+height: 80px;
+border-radius: 5px;
+margin: auto;
+margin-top: auto;
+}
+.mantra {
+  margin-top: 6%;
+  margin-left: 2%;
+}
+.meditate {
+  background: #ffffff;
+  width: 625px;
+  height: 110px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 5%;
+}
+svg {
+  height: 80px;
+  margin-top: 2%;
+  margin-left: -87%;
+}
+.receive-message {
+  width: 180px;
+  height: 22px;
+  margin-top: 12%;
+  margin-left:30%;
+  border-radius: 3px;
+  border-width: thin;
+  border-color: #134d71;
+  background-color: #134d71;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+}

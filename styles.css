@@ -27,6 +27,7 @@ h3 {
   border-radius: 5px;
   width: 165px;
   margin-top: 8px;
+  font-family: 'Quicksand', sans-serif;
 }
 .container {
   background: #ffffff;
@@ -44,6 +45,11 @@ h3 {
   border-radius: 5px;
   margin: auto;
   margin-top: 5%;
+}
+p {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 20px;
 }
 img {
   height: 80px;

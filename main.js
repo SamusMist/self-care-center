@@ -1,4 +1,10 @@
-
+//Query selector for receive message button
+var buttonReceiveMessage = document.querySelector('.receive-message');
+//Input field query selectors
+var mantraInput = document.querySelector('.mantra').checked;
+var affirmationInput = document.querySelector('.affirmation').checked;
+var meditateBox = document.querySelector('.meditate');
+//Affirmations and mantras arrays
 var affirmations = [
   'I forgive myself and set myself free.',
   'I believe I can be all that I want to be.',
@@ -14,7 +20,6 @@ var affirmations = [
   'I honor my body by trusting the signals that it sends me.',
   'I manifest perfect health by making smart choices.',
 ];
-
 var mantras = [
   'Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.',
   'Every day is a second chance.',
@@ -32,3 +37,24 @@ var mantras = [
   'Onward and upward.',
   'I am the sky, the rest is weather.',
 ];
+//Listener for the Receive message button
+ buttonReceiveMessage.addEventListener('click', returnMessage);
+
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+  function returnMessage() {
+    if (document.getElementById("mantra-input").checked) {
+    meditateBox.innerHTML = ``
+    meditateBox.innerHTML += `
+      <p>${mantras[getRandomIndex(mantras)]}</p>
+      <img src=""/>`
+  };
+  if (document.getElementById("affirmation-input").checked) {
+  meditateBox.innerHTML = ``
+  meditateBox.innerHTML += `
+    <p>${affirmations[getRandomIndex(affirmations)]}</p>
+    <img src=""/>`
+  }
+}

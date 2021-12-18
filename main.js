@@ -1,9 +1,13 @@
 //Query selector for receive message button
 var buttonReceiveMessage = document.querySelector('.receive-message');
-//Input field query selectors
-var mantraInput = document.querySelector('.mantra').checked;
-var affirmationInput = document.querySelector('.affirmation').checked;
 var meditateBox = document.querySelector('.meditate');
+//input selectors
+var mantraInput = document.getElementById("mantra-input");
+var affirmationInput = document.getElementById("affirmation-input");
+//Query selector for delete message button;
+var buttonDeleteMessage = document.querySelector('.delete-message');
+//Buddha selector
+var buddhaSelector = document.querySelector('.buddhaImg');
 //Affirmations and mantras arrays
 var affirmations = [
   'I forgive myself and set myself free.',
@@ -38,23 +42,43 @@ var mantras = [
   'I am the sky, the rest is weather.',
 ];
 //Listener for the Receive message button
- buttonReceiveMessage.addEventListener('click', returnMessage);
+ buttonReceiveMessage.addEventListener('click', function () {
+   returnMessage(mantras, mantraInput);
+   returnMessage(affirmations, affirmationInput);
+ });
+ buttonDeleteMessage.addEventListener('click', function() {
+   deleteMessage();
+ });
+
+var someShit;
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
-}
+};
 
-  function returnMessage() {
-    if (document.getElementById("mantra-input").checked) {
-    meditateBox.innerHTML = ``
-    meditateBox.innerHTML += `
-      <p>${mantras[getRandomIndex(mantras)]}</p>
-      <img src=""/>`
+function returnMessage(messageArray, messageInput) {
+  someShit = messageArray[getRandomIndex(messageArray)];
+  buttonDeleteMessage.classList.remove('hidden');
+  if (messageInput.checked) {
+  meditateBox.innerHTML = `
+    <p>${someShit}</p>`
   };
-  if (document.getElementById("affirmation-input").checked) {
-  meditateBox.innerHTML = ``
-  meditateBox.innerHTML += `
-    <p>${affirmations[getRandomIndex(affirmations)]}</p>
-    <img src=""/>`
-  }
-}
+};
+
+  function deleteMessage() {
+    someShit = mantras[getRandomIndex(mantras)];
+    returnMessage(mantras, mantraInput);
+    if (mantras.includes(someShit)) {
+      mantras.splice(someShit, 1);
+    };
+
+    someShit = affirmations[getRandomIndex(affirmations)];
+    returnMessage(affirmations, affirmationInput);
+    if (affirmations.includes(someShit)) {
+      affirmations.splice(someShit, 1);
+    };
+
+    meditateBox.innerHTML = `
+    <img src="./assets/meditate.svg"/>`;
+    buttonDeleteMessage.classList.add('hidden');
+  };

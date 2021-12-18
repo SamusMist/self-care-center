@@ -38,6 +38,10 @@ h3 {
   margin-top: auto;
   font-style: italic;
 }
+img {
+  height: 80px;
+  margin-top: 13px;
+}
 .meditate {
   background: #ffffff;
   width: 625px;
@@ -48,16 +52,26 @@ h3 {
 }
 p {
   text-align: center;
-  margin-top: 35px;
   font-size: 20px;
-}
-img {
-  height: 80px;
-  margin-top: 13px;
+  margin-bottom: 20px;
+  padding-top: 40px;
 }
 .mantra {
   margin-top: 25px;
 }
 .affirmation {
   margin-left: 125px;
+}
+.hidden {
+  display: none;
+}
+.delete-message {
+  margin-top: 8px;
+  font-weight:lighter;
+  border-color: #134d71;
+  background-color: #134d71;
+  color: #ffffff;
+  border-radius: 5px;
+  width: 176px;
+  font-family: 'Quicksand', sans-ser
 }
